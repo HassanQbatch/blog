@@ -25,8 +25,10 @@ except: [:index, :show]
 		@article = Article.new(article_params)
 
 		if @article.save
+			flash[:success] = "Saved!"
 			redirect_to @article
 		else
+			flash.now[:error] = "Errors"
 			render 'new'
 		end
 	end

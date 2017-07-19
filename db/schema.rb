@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170714073317) do
+ActiveRecord::Schema.define(version: 20170719082247) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "availability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,6 +32,31 @@ ActiveRecord::Schema.define(version: 20170714073317) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.integer "mgr_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "mgr_id_id"
+    t.index ["mgr_id_id"], name: "index_employees_on_mgr_id_id"
+  end
+
+  create_table "employers", force: :cascade do |t|
+    t.string "name"
+    t.integer "mgr_id_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mgr_id_id"], name: "index_employers_on_mgr_id_id"
+  end
+
+  create_table "emps", force: :cascade do |t|
+    t.string "name"
+    t.integer "manager_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manager_id"], name: "index_emps_on_manager_id"
   end
 
   create_table "likes", force: :cascade do |t|
