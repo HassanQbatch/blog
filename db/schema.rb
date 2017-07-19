@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719082247) do
+ActiveRecord::Schema.define(version: 20170719094041) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -32,6 +32,21 @@ ActiveRecord::Schema.define(version: 20170719082247) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
+  create_table "customer_orders", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_customer_orders_on_customer_id"
+    t.index ["order_id"], name: "index_customer_orders_on_order_id"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "employees", force: :cascade do |t|
@@ -62,6 +77,12 @@ ActiveRecord::Schema.define(version: 20170719082247) do
   create_table "likes", force: :cascade do |t|
     t.integer "likeable_id"
     t.string "likeable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
