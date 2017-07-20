@@ -1,0 +1,33 @@
+<h1>Add Employee</h1>
+
+<%= form_for @employee do |f| %>
+	<p>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	</p>
+
+	<p>
+	<%= f.label :Gender %>
+	<%= f.select(:gender, options_for_select( [ ["Select One", ""], "Male", "Female" ] ) )%>
+	</p>
+
+	<p>
+	<%= f.label :Email %>
+	<%= f.email_field(:email) %>
+	</p>
+
+	<p>
+	<%= f.label :Password %>
+	<%= f.password_field (:password) %>
+	</p>
+
+	<p>
+	<%= f.label :Joining_Date %>
+	<%= f.date_field(:joining_date) %>
+	</p>
+
+	<p>
+	<%= f.submit :Submit %>
+	</p>
+
+<% end %>
