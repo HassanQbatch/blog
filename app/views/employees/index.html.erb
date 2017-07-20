@@ -1,1 +1,10 @@
 <h1>Index</h1>
+
+<% @employee.each do |e| %>
+	<%= e.name %>
+	<%= e.gender %>
+	<%= e.email %>
+	<%= e.password %>
+	<%= e.joining_date %>
+	<br>
+<% end %>
