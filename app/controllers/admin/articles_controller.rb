@@ -4,25 +4,25 @@ class Admin::ArticlesController < ApplicationController
 except: [:index, :show]
 
 	def index
-		@articles = Article.all
+		@articles = Admin::Article.all
 	end
 	
 	def show
-		@article = Article.find(params[:id])
+		@article = Admin::Article.find(params[:id])
 	end
 
 	def new
-		@article = Article.new
+		@article = Admin::Article.new
 	end
 
 	def edit
-		@article = Article.find(params[:id])
+		@article = Admin::Article.find(params[:id])
 	end
 
 	def create
 		#render plain: params[:article].inspect
 		#@article = Article.new(params[:article])
-		@article = Article.new(article_params)
+		@article = Admin::Article.new(article_params)
 
 		if @article.save
 			flash[:success] = "Saved!"
@@ -34,7 +34,7 @@ except: [:index, :show]
 	end
 
 	def update
-		@article = Article.find(params[:id])
+		@article = Admin::Article.find(params[:id])
 
 		if @article.update(article_params)
 			redirect_to @article
@@ -44,7 +44,7 @@ except: [:index, :show]
 	end
 
 	def destroy
-		@article = Article.find(params[:id])
+		@article = Admin::Article.find(params[:id])
 		@article.destroy
 
 		redirect_to admin_articles_path

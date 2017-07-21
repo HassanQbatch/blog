@@ -4,13 +4,13 @@ class Admin::CommentsController < ApplicationController
 only: :destroy
 
 	def create
-	    @article = Article.find(params[:article_id])
+	    @article = Admin::Article.find(params[:article_id])
 	    @comment = @article.comments.create(comment_params)
 	    redirect_to admin_article_path(@article)
 	end
 
 	def destroy
-	    @article = Article.find(params[:article_id])
+	    @article = Admin::Article.find(params[:article_id])
 	    @comment = @article.comments.find(params[:id])
 	    @comment.destroy
 	    redirect_to admin_article_path(@article)		
