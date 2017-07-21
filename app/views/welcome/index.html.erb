@@ -6,6 +6,8 @@
 <%= raw "<strong> strong </strong>" %>
 
 <br>
-<%= link_to 'Employee Form', controller:'employees', action:'new' %>
+<%= link_to 'Employee Form', new_employee_path %>
 <br>
-<%= link_to 'All Employees', controller:'employees', action:'index' %>
+<%= link_to 'All Employees', employees_path %>
+<br>
+<%= link_to 'User Form', new_user_path %>
