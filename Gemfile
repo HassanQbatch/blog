@@ -65,3 +65,5 @@ gem 'kaminari-bootstrap'
 gem 'cocoon'
 
 gem 'jquery-rails'
+
+gem 'materialize-sass'
