@@ -1,11 +1,16 @@
 <div class="nested-fields">
-  <%= f.label :city %>
-  <%= f.text_field :city %>
+	<div class="row">
+		<div class="input-field col s6">
+		  <%= f.label :city %>
+		  <%= f.text_field :city%>
+		</div>
 
-  <%= f.label :street %>
-  <%= f.text_field :street %>
+		<div class="input-field col s6">
+		  <%= f.label :street %>
+		  <%= f.text_field :street%>
+	  	</div>
+	  <%= f.check_box :_destroy %>
 
-  <%= f.check_box :_destroy %>
-
-  <%= link_to_remove_association "remove address", f %>
+	  <%= link_to_remove_association "remove address", f %>
+	</div>
 </div>

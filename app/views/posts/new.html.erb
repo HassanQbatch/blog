@@ -10,10 +10,13 @@
 	<%= f.text_area :body %>
 	</p>
 
-	<p>
-	<%= f.file_field :image %>
-	</p>
-
+	<div class="file-field input-field">
+		<div class="btn">
+		<p>
+		<%= f.file_field :image %>
+		</p>
+		</div>
+	</div>
 	<p>
 	<%= f.submit %>
 	</p>
