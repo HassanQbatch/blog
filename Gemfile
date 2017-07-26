@@ -59,3 +59,5 @@ gem 'paperclip'
 
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+
+gem 'cocoon'
