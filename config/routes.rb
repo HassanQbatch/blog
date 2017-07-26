@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
 
+  resources :places, only: [:new, :create, :edit, :update, :index]
+
   root 'welcome#index'
 end

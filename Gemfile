@@ -61,3 +61,5 @@ gem 'kaminari'
 gem 'kaminari-bootstrap'
 
 gem 'cocoon'
+
+gem 'jquery-rails'
